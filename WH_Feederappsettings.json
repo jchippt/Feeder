@@ -1,0 +1,2532 @@
+{
+	"PtFeeder": {
+		// PTF settings ** NEEDS OPTIMIZINGx
+		"BaseCoinPair": "BTCUSDT",
+		"BaseCurrency": "USDT",
+		"FeederCandleSize": "5m",
+
+		// PTF COIN LISTS //
+		"ExcludedCoins": "WAN,CKB,EUR,DIA,STPT,ARD,BAL,WBTC,LTC,DOGE,BNB,XRP,BCHSV,TUSD,USDC,USDS,ERD,EUR,BUSD,BGBP,XRPUP,XRPDOWN,EURO,GBP,ETHUP,ETHDOWN,BTCUP,BTCDOWN,LTCUP,LTCDOWN,LINKUP,LINKDOWN,BNBUP,BNBDOWN,YFIUP,YFIDOWN,UNIUP,UNIDOWN,AAVEUP,AAVEDOWN,DOTUP,DOTDOWN,SUSHIUP,SUSHIDOWN,SXPUP,SXPDOWN,ADAUP,ADADOWN,TRXUP,TRXDOWN,EOSUP,EOSDOWN,XTZUP,XTZDOWN,FILUP,FILDOWN,XLMUP,XLMDOWN,YUV,1INCH,AKRO,ANKR,ANKR,AXS,BAKE,BAL,BAND,BCH,BEL,BLZ,BTCDOM,BTC,BTC210924,BTS,BTT,CELR,CHR,CHZ,COTI,CRV,CTK,CVC,DEFI,DENT,DGB,DODO,DOGE,EOS,ETH210924,GTC,HBAR,HNT,HOT,ICP,ICX,KEEP,LINA,LIT,LRC,LUNA,MANA,MTL,NKN,ONE,REEF,RLC,RSR,RUNE,RVN,SAND,SC,SFP,SKL,TLM,TRB,UNFI,XEM,XRP,YFII,YFI,AVAX,OGN,STMX,ALICE", // yuv, bought a pump but it's clear it's on a downward trend. THETA, DGD    27 nov manually sold or taken to long BCC,BCH,LLT,BTS,WAVES,BNB,ETC,BCD,GTO,NULS,NAS,STRAT,VIA,LEND,SALT,NEBL,PPT,GAS,NAV,ZEN,SC,BCPT,CND,VIBE,KEY
+		
+		//"DCAIncludedCoins": "",
+		//"DCAExcludedCoins": "",			//** NEEDS OPTIMIZING
+		
+		"EnabledCoinsOnly": "",
+		"SomOnlyCoins": "BNB",
+		"HiddenCoins": "BNB,BCHSV,TUSD,USDC,USDS,ERD,EUR,BUSD,BGBP,XRPUP,XRPDOWN,EURO,GBP,ETHUP,ETHDOWN,BTCUP,BTCDOWN,LTCUP,LTCDOWN,LINKUP,LINKDOWN,BNBUP,BNBDOWN,YFIUP,YFIDOWN,UNIUP,UNIDOWN,AAVEUP,AAVEDOWN,DOTUP,DOTDOWN,SUSHIUP,SUSHIDOWN,SXPUP,SXPDOWN,ADAUP,ADADOWN,TRXUP,TRXDOWN,EOSUP,EOSDOWN,XTZUP,XTZDOWN,FILUP,FILDOWN,XLMUP,XLMDOWN,YUV", // coins that will be hidden from the PT Monitor
+		
+		// MEASURE TIMES //
+		"MeasureTimes": [
+			15,
+			60,
+			240,
+			1440
+		], 
+
+		"TopCoinTrendChangeCoins": "BTC,ETH,XRP,BCHABC,LTC,EOS,BNB,BSV,TRX,ADA,XLM,XMR,DASH,ATOM,MIOTA,NEO,ETC,XEM,ONT,XTZ,ZEC,MKR,LINK,BTG,CRO,BAT,QTUM,DOGE,VET,OMG,DCR,BTT,LSK,RVN,HOT,BCD,WAVES,NPXS,ZRX,REP,NANO,BTS,BTM,HT,DENT,AOA,HEDG,HC,MONA,ZIL,QBIT,GDBG,AE,ICX,KMD,IOST,KCS,XVG,STEEM,THETA,NRG,ELF,ENJ,SNT,MCO,XZC,STRAT,WAX,NAS", // need to add coins that properly reflect crypto market trend
+		"TopCurrenciesToCheck": "69",
+
+		// PTF INDICATORS // for use with custom condition groupings
+		"EmaShortCandleSize": "5m",
+		"EmaLongCandleSize": "5m",
+		"EmaShortPeriod": "8",
+		"EmaLongPeriod": "31",
+
+		"EmaShorterCandleSize":"5m",
+		"EmaLongerCandleSize":"5m",
+		"EmaShorterPeriod":"100",
+		"EmaLongerPeriod":"200",
+
+		"SmaShortCandleSize": "1h",
+		"SmaLongCandleSize": "1h", 
+		"SmaShortPeriod": "21",
+		"SmaLongPeriod": "55",
+
+		"SmaShorterCandleSize": "1h",
+		"SmaLongerCandleSize": "1d",
+		"SmaShorterPeriod": "100",
+		"SmaLongerPeriod": "200",
+		
+		"BaseHighLowPriceChangeCandleSize": "5m",
+		
+		"HighestCandlesSize": "5m",
+		"LowestCandlesSize": "5m",
+		
+		"RsiLongPeriod": "20",
+		"RsiShortPeriod": "5",
+		"RsiShortCandleSize": "5m",
+		"RsiLongCandleSize": "5m", // to set alternate strategies
+		
+		"VwmaLength": "2",
+		"VwmaLookBackPeriod": "2",
+
+		"TopCoinsAverageEmaLongPeriod": "20",
+		"TopCoinsAverageEmaShortPeriod": "16"
+	},
+	"Common": {
+		// user & PT settings ** NEEDS OPTIMIZING
+		// USER BASED SETTINGS // these settings can be customized by each user, all other settings are fine tuned for the conditions logic to work properly
+		"KeepBalance": "20%",
+		"DcaKeepBalance": "0", 
+
+		//"DisabledPairs":"%DOWN,%UP",
+
+		//"AutoLeverageCalculation":"true", //Change to true if using leverage
+		//"Shorting":"false",
+
+		//Max Trading Pairs
+		
+		"MaxTradingPairs":  "24", 
+		//"MaxTradingPairsSoftCapIgnoreProfit":"1.25",
+		"MaxTradingPairsSoftCapIgnoreArmed":"True",
+		"MaxTradingPairsSoftCap":"12", // do not change as is needed for posm condition logic(can lower to 7 for more conservative) used to be 12
+
+		//"DcaMaxTradingPairsSoftCapIgnoreProfit":"1.25",
+		"DcaMaxTradingPairsSoftCapIgnoreArmed":"True",
+		"DcaMaxTradingPairsSoftCap":"12",// do not change as is needed for posm condition logic(can lower to 7 for more conservative) used to be 12
+
+		"MaxTradingPairsIgnore": "",
+		
+		"DcaStopBeforeComplete": "true",
+
+		/*"DcaLeve1MaxTradingPairs":"20",
+		"DcaLeve2MaxTradingPairs":"20",
+		"DcaLeve3MaxTradingPairs":"20",
+		"DcaLeve4MaxTradingPairs":"20",
+		"DcaLeve5MaxTradingPairs":"20",
+		"DcaLeve6MaxTradingPairs":"20",
+		"DcaLeve7MaxTradingPairs":"20",*/
+
+		
+		"TradingPairsBuyPriority":"spreadasc,volumedesc",
+		"DcaTradingPairsBuyPriority":"spreadasc,volumedesc"
+
+	},
+	"Defaults": {
+		"InitialCost": "1%", // 25 is used for orig strat for 1.5-2k bal // need to calculate (((min purchase amount / risk capital)*100) *1.15)  or will get below dust errors
+		"DcaBuyCost":"1%",
+
+		"MaxProfit": "", 
+		"DcaMaxProfit": "", 
+
+		"MaxCost":"", //was 1000
+		"DcaMaxCost":"", //was 4500
+
+		"MinBuyVolume": "30000000", // play around untill you feel comfortable with the amount of pairs in possible buy log
+		"DcaMinBuyVolume": "5000000", //dead coin saftey protection //** NEEDS OPTIMIZING
+		"MinBuyPrice": "0.85", // remove or change for leverage
+
+		"BuySlippagePercentage":"0.02",
+		"SellSlippagePercentage":"0.02",
+		
+		//ENABLE FOR LEVERAGE!
+		/*"StopLossCreateExchangeOrder":"true",
+		"TrailingStopLossCreateExchangeOrder":"true",
+		"TakeProfitSafetyCreateExchangeOrder":"true",*/
+
+		// -------------------------------------------------------------------------------------------------------------------------------------------------
+		// LEVERAGE (correct placement)
+		// -------------------------------------------------------------------------------------------------------------------------------------------------
+		//off, don't leverage
+		//"BuyLeverage":"10",
+		//"DcaBuyLeverage":"10",
+		//"BuyMarginType":"cross",
+		//"DcaBuyMarginType":"cross",
+		// SAFETY SETTINGS //
+
+		"MaxBuySpread": "1", //max order book spread
+		"DcaMaxBuySpread": "0.5", 
+
+		//"BuyMinChangePercentage": "-7", //overidden by Strategy
+		//"BuyMaxChangePercentage": "10",
+
+		"BuyTimeoutAfterSell": "2", //changed 10 3.07 //offset/overidden by Strategy risk
+		"DcaBuyTimeout":"5", //MIN 0 MAX 5 or more if you want
+
+		"SellWallOrderbookDepth": "50",
+		"SellWallDiffPercentage": "5000",
+		
+		"DcaEnabled": "true", // 10.07
+		
+		"DcaMaxBuyTimes": "80", //offset by POSM
+		"DcaMaxTradingPairs": "25", //offset by POSM was 12
+		"DcaMaxTradingPairsIgnore": "",
+		
+		//"DcaBuyMinChangePercentage": "-7", //added 26.06
+		//"DcaBuyMaxChangePercentage": "-7", //added 26.06
+
+		"DcaSellWallOrderbookDepth": "50",
+		"DcaSellWallDiffPercentage": "2500",
+		
+		"SellOnlyModeEnabled": "false",
+	
+		"TrailingProfitReboundCount": "0",
+		"DcaTrailingProfitReboundCount": "0",
+
+		//"TrailingStopLossTriggerArm": "3",
+		//"TrailingStopLossTrigger": "1.5", //** NEEDS OPTIMIZING 
+
+		//"DcaTrailingStopLossTriggerArm": "3",
+		//"DcaTrailingStopLossTrigger": "2",
+
+		//"TakeProfitSafetyArm": "1.25",
+		//"TakeProfitSafetyFire": "0.8",
+
+		//"DcaTakeProfitSafetyArm" : "3",  
+		//"DcaTakeProfitSafetyFire" : "0.8", 
+
+		"TakeProfitPercentage": "1.5",
+		"TakeProfitResetPercentageMove": "0.25",
+		"TakeProfitWaitTime": "10",
+
+		"DcaTakeProfitPercentage": "1.5",
+		"DcaTakeProfitResetPercentageMove": "0.25",
+		"DcaTakeProfitWaitTime": "10",
+
+		"DcaTrailingBuyResetWithStrategies": "true",
+		"TrailingBuyResetWithStrategies": "true",
+		
+		//"CombinePendingOrders":"true",
+		//"PendingOrderPriceDropTrigger":"-4",  //
+		//"PendingOrderWaitTime":"240", // commented out for Defender use
+		//"CombineDcaCancelPendingTrigger":"0.1", //
+		
+		
+		
+		//STRATEGY INDICATORS //
+
+		"IndicatorsChgpct24hCandlePeriod": "300",
+		"IndicatorsChgpct24hLength":"288", 
+
+		"IndicatorsChgpct1hCandlePeriod":"300", 
+		"IndicatorsChgpct1hLength":"12", 
+
+		"IndicatorsChgpct15CandlePeriod":"900", 
+		"IndicatorsChgpct15Length":"1", 
+
+		"IndicatorsChgpct1mCandlePeriod":"60", 
+		"IndicatorsChgpct1mLength":"1", 
+
+		"IndicatorsChgpct15mCandlePeriod":"900", 
+		"IndicatorsChgpct15mLength":"1", 
+
+		"IndicatorsChgpct5mCandlePeriod":"300", 
+		"IndicatorsChgpct5mLength":"1", 
+
+		"IndicatorsChgpct1m-nCandlePeriod":"60", 
+		"IndicatorsChgpct1m-nLength":"1", 
+		"IndicatorsChgpct1m-pCandlePeriod":"60", 
+		"IndicatorsChgpct1m-pLength":"1",
+
+		"IndicatorsPtadxtrendCandlePeriod":"300", 
+		"IndicatorsPtadxtrendLength":"3", 
+		"IndicatorsPtadxtrenddiLength":"3", 
+		"IndicatorsPtadxtrendOnlyClosedCandle":"false", 
+
+		"IndicatorsBbwidth15mLength":"12", 
+		"IndicatorsBbwidth15mStd":"2", 
+		"IndicatorsBbwidth15mCandlePeriod":"900", 
+
+		"IndicatorsLowbb1hCandlePeriod":"3600", 
+		"IndicatorsLowbb1hLength":"20", 
+		"IndicatorsLowbb1hStd":"2", 
+
+		"IndicatorsHighbb1hCandlePeriod":"3600", 
+		"IndicatorsHighbb1hLength":"20", 
+		"IndicatorsHighbb1hStd":"2", 
+
+		"IndicatorsBbLength":"20", 
+		"IndicatorsBbStd":"2", 
+		"IndicatorsBbCandlePeriod":"300", 
+
+		"IndicatorsAtrpercentageIndicator":"EMA", 
+		"IndicatorsAtrpercentageCandlePeriod":"300",
+		"IndicatorsAtrpercentageLength":"14", 
+		"IndicatorsAtrpercentageOffset":"4", 
+
+		"IndicatorsLowatrbandCandlePeriod":"300", 
+		"IndicatorsLowatrbandLength":"14", 
+		"IndicatorsLowatrbandmultiplier":"3", 
+		"IndicatorsLowatrbandOffset":"4", 
+
+		"IndicatorsHighatrbandCandlePeriod":"300", 
+		"IndicatorsHighatrbandLength":"14", 
+		"IndicatorsHighatrbandmultiplier":"3", 
+		"IndicatorsHighatrbandOffset":"4",
+
+		"IndicatorsRsi1m-uCandlePeriod":"60", 
+		"IndicatorsRsi1m-uLength":"14", 
+		"IndicatorsRsi1m-dCandlePeriod":"60", 
+		"IndicatorsRsi1m-dLength":"14", 
+
+		"IndicatorsRsi5mCandlePeriod":"300", 
+		"IndicatorsRsi5mLength":"14",
+
+		"IndicatorsRsi15mCandlePeriod":"900", 
+		"IndicatorsRsi15mLength":"14", 
+
+		"IndicatorsRsi1hCandlePeriod":"3600", 
+		"IndicatorsRsi1hLength":"14", 
+
+		"IndicatorsObvCandlePeriod":"300", 
+		"IndicatorsObvLength":"15", 
+		"IndicatorsObvSignal":"1", 
+
+		"IndicatorsChgpct30mCandlePeriod":"1800", 
+		"IndicatorsChgpct30mLength":"1", 
+
+		"IndicatorsBuypdhighCandlePeriod":"60",
+
+		"IndicatorsPdhighCandlePeriod":"900", 
+		"IndicatorsPdhighRange":"24", 
+		"IndicatorsPdhighOnlyClosedCandles":"true", 
+
+		"IndicatorsPdhigh2CandlePeriod":"900", 
+		"IndicatorsPdhigh2Range":"2", 
+
+		"IndicatorsMacdCandlePeriod":"300", 
+		"IndicatorsMacdFastLength":"12", 
+		"IndicatorsMacdSlowLength":"26", 
+		"IndicatorsMacdSignal":"9", 
+		"IndicatorsMacdReturnValue":"HISTOGRAM", 
+
+		"IndicatorsMacdsellCandlePeriod":"60", 
+		"IndicatorsMacdsellFastLength":"12", 
+		"IndicatorsMacdsellSlowLength":"26", 
+		"IndicatorsMacdsellSignal":"9", 
+		"IndicatorsMacdsellReturnValue":"HISTOGRAM", 
+		"IndicatorsMacdsellOnlyClosedCandles":"true", 
+
+		"IndicatorsAtr60Indicator":"EMA", 
+		"IndicatorsAtr60CandlePeriod":"3600", 
+		"IndicatorsAtr60Length":"14", 
+		"IndicatorsAtr60Offset":"4", 
+
+		"IndicatorsAtr15Indicator":"EMA", 
+		"IndicatorsAtr15CandlePeriod":"900",
+		"IndicatorsAtr15Length":"14", 
+		"IndicatorsAtr15Offset":"4", 
+
+		//CHANGE Period AND Length. DEFAULT IS 15M
+		"IndicatorsWhCandlePeriod":"900", 
+		"IndicatorsWhLength":"5", 
+
+		// Som triggers will look for the change in the past 12 5 minute Candles. Which is 1 hour
+		"IndicatorsSOMTriggerLength":"12",
+
+		"IndicatorsAtrpercentagetrailIndicator":"EMA", 
+		"IndicatorsAtrpercentagetrailCandlePeriod":"300",
+		"IndicatorsAtrpercentagetrailLength":"14", 
+		"IndicatorsAtrpercentagetrailOffset":"1",
+
+		
+		"IndicatorsAtrpercentageexitIndicator":"EMA", 
+		"IndicatorsAtrpercentageexitCandlePeriod":"3600",
+		"IndicatorsAtrpercentageexitLength":"14", 
+		"IndicatorsAtrpercentageexitOffset":"1"
+
+	},
+	"Snippets": [
+		
+		{
+			"SnippetName": "DefaultBuy",
+			"BuyStrategyFormula": "(A)", //(A && B)
+
+			"ABuyStrategyLabel" :"WH",
+			"ABuyStrategy":"VWAPPERCENTAGE",
+			
+			// USE YOUR VALUE AND LIMIT, CHECK TV
+			"ABuyValue":"-1.1",
+			"ABuyValueLimit":"-5",
+
+			"BBuyStrategyLabel":"BUYPDHIGH",
+			"BBuyStrategy":"Pdhigh",
+			"BBuyStrategyValue":"0.1",
+
+			"Weight": "50"
+		},
+	
+		{
+			"SnippetName": "DefaultDcaBuy",
+
+			"DcaTrailingBuyResetWithStrategies":"true",
+
+			"DcaBuyStrategyFormula": "(A && B) || (C && D) || Y",
+
+			"DcaABuyStrategy":"PROFITPERCENTAGE",
+			"DcaABuyStrategyLabel":"PPCT-P",
+			"DcaABuyValue":"4",
+
+			"DcaBBuyStrategy":"CHANGEPERCENTAGE",
+			"DcaBBuyStrategyLabel":"Chgpct1M-P",
+			"DcaBBuyValue":"2",
+
+			"DcaCBuyStrategy":"PROFITPERCENTAGE",
+			"DcaCBuyStrategyLabel":"PPCT-N",
+			"DcaCBuyValue":"-4",
+
+			"DcaDBuyStrategy":"CHANGEPERCENTAGE",
+			"DcaDBuyStrategyLabel":"Chgpct1M-N",
+			"DcaDBuyValue":"2",
+
+			"DcaYBuyStrategy":"PROFITPERCENTAGE",
+			"DcaYBuyStrategyLabel":"50%",
+			"DcaYBuyValue":"-5",
+
+			"Weight":"60"
+
+		},
+
+		{
+			"SnippetName":"DcaSellStrategy",
+
+			"DcaSellStrategyFormula":"(A && C)",
+
+			"DcaASellStrategy":"GAIN",
+			"DcaASellValue":"0.8",
+			
+			"DcaBSellStrategy":"FUNDINGRATE",
+
+			"DcaCSellStrategyLabel":"MACDSELL",
+			"DcaCSellStrategy":"MACD",
+			"DcaCSellValue":"-0.000001",
+
+			"DcaESellStrategyLabel":"Bbwidth15M",
+			"DcaESellStrategy":"Bbwidth",
+			
+			"DcaXSellStrategy":"Atrpercentage",
+
+			"DcaUSellStrategy":"Pdhigh",
+
+			"DcaZSellStrategyLabel":"Atrpercentage",
+			"DcaZSellStrategy":"Atrpercentage",
+			"DcaZSellValue":"1",
+
+			"Weight":"60"
+		},
+	
+		{
+			"SnippetName":"Trailing",
+			"QBuyStrategyLabel":"AtrpercentageTRAIL",
+			"QBuyStrategy":"Atrpercentage",
+
+			"ZSellStrategyLabel":"Atrpercentageexit",
+			"ZSellStrategy":"Atrpercentage",
+
+			"DcaQBuyStrategyLabel":"AtrpercentageTRAIL",
+			"DcaQBuyStrategy":"Atrpercentage",
+
+			"DcaZSellStrategyLabel":"Atrpercentageexit",
+			"DcaZSellStrategy":"Atrpercentage",
+
+			"TrailingBuy":"SQ * 0.15",
+			"DcaTrailingBuy":"SQ * 0.15",
+
+			"TrailingProfit":"SZ * 0.2",
+			"DcaTrailingProfit":"SZ * 0.2",
+
+			"Weight":"60"
+
+		},
+
+		{
+			"SnippetName":"TakeProfit",
+
+			"DcaSO1TakeProfitTarget":"1.0",
+			"DcaSO2TakeProfitTarget":"2.5",
+			"DcaSO3TakeProfitTarget":"5.0",
+
+			"DcaSO1TakeProfitPortion":"20",
+			"DcaSO2TakeProfitPortion":"25",
+			"DcaSO3TakeProfitPortion":"30",
+
+			"DcaTakeProfitSafetyArm":"SE < 5 ? SX * SE * 2.0 / 5 : SE < 10 ? SX * SE * 2.0 / 10 : SX * SE * 2.0 / 15",
+			"DcaTakeProfitSafetyFire":"SE < 5 ? SX * SE * 1.28 / 5 : SE < 10 ? SX * SE * 1.28 / 10 : SX * SE * 1.28 / 15",
+
+			"DcaTrailingStopLossTriggerArm":"SE < 5 ? SX * SE * 3.0 / 5 : SE < 10 ? SX * SE * 3.0 / 10 : SX * SE * 3.0 / 15",
+			"DcaTrailingStopLossTrigger":"SE < 5 ? SX * SE * 1.28 / 10 : SE < 10 ? SX * SE * 1.28 / 20 : SX * SE * 1.28 / 30",
+
+			"Weight":"60"
+		}
+	
+	],
+	
+	"MarketConditionsGrouping": { //Default Market condition, 
+		
+		"Configs": [
+			{
+				"MaxTopCoinAverageChange": "100000",
+				"Name": "Marketcond",
+
+				"Override": {
+					"InsertSnippets": "DefaultBuy,DefaultDcaBuy,DcaSellStrategy,Trailing,TakeProfit",
+					
+					"Weight": "500"
+				}
+			}
+			
+		]
+	},
+
+	/*************** Buy Strategy Overides and Offsets **************************************************************************************************************************************************************************************************/
+	// EMA Based Default Strategy // ** NEEDS OPTIMIZING lvl 1 risk
+	"SpanishDCAGrouping": {
+		//Aggressive Dca strategy when 1,4hr Topcoinschange% is more than x% and EMA short is over the long  . 2.07 (Alternate Buy Strategy)
+		"Condition": "[market.TopCoinsChange(2)] >= [config.TopCoinTrendChange2] && [market.TopCoinsChange(3)] >= [config.TopCoinTrendChange3] && [pair.Volume] >= [config.Volume] && [pair.ShortEma] >= [pair.LongEma] && [pair.PercentageChange(4)] >= -4 && [pair.PercentageChange(4)] < 7",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"TopCoinTrendChange2": "0.5",
+				"TopCoinTrendChange3": "1",
+				"Volume": "25000000",
+				"DcaCost1Offset": "10", // added 4/9
+				"DcaCost2Offset": "20",
+				"DcaCost3Offset": "30",
+				"DcaCost4Offset": "40",
+				"DcaCost5Offset": "50",
+				//needs offsets here
+				// decrease trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.4",
+            		"DcaTrailingProfit":"SZ * 0.4",
+
+					"DcaASellValue":"1",
+
+           			"DcaSO1TakeProfitTarget":"1.0",
+            		"DcaSO2TakeProfitTarget":"2.5",
+            		"DcaSO3TakeProfitTarget":"5.0",
+
+					//needs saftey conditions here
+					"Weight": "880"
+				}
+			}
+		]
+	},
+	"UpTrendScalpingStrategyGrouping": {
+		//if the 1Hr pair % change is more than x% and the short EMA is over the long EMA then set Scalping based Strategy. 02.07 (Alternate Buy Strategy)
+		"Condition": "[pair.PercentageChange(2)] >= [config.PercentageChange2] && [pair.PercentageChange(3)] >= [config.PercentageChange3] && [market.TopCoinsChange(2)] >= -0.5 && [pair.Volume] >= [config.Volume] && [pair.ShortEma] > [pair.LongEma] && [pair.PercentageChange(4)] >= -0.1 && [pair.PercentageChange(4)] < 7",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"PercentageChange2": "1.5", // needs triggers optimized // increased 04/09
+				"PercentageChange3": "0.9", // needs triggers optimized
+				"Volume": "15000000",
+				"DcaCost1Offset": "5", // added 4/9
+				"DcaCost2Offset": "10",
+				"DcaCost3Offset": "15",
+				"DcaCost4Offset": "20",
+				"DcaCost5Offset": "25",
+
+				//needs offsets here
+				// decrease trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.4",
+            		"DcaTrailingProfit":"SZ * 0.4",
+
+					"DcaASellValue":"1",
+
+           			"DcaSO1TakeProfitTarget":"1.0",
+            		"DcaSO2TakeProfitTarget":"2.5",
+            		"DcaSO3TakeProfitTarget":"5.0",
+					//needs saftey conditions here
+					"Weight": "20"
+				}
+			},
+			{
+				"PercentageChange2": "2.1", // needs triggers optimized // increased 04/09
+				"PercentageChange3": "1.8", // needs triggers optimized
+				"Volume": "15000000",
+				"DcaCost1Offset": "10", // added 4/9
+				"DcaCost2Offset": "20",
+				"DcaCost3Offset": "30",
+				"DcaCost4Offset": "40",
+				"DcaCost5Offset": "50",
+				//needs offsets here
+				// decrease trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.5",
+            		"DcaTrailingProfit":"SZ * 0.5",
+
+					"DcaASellValue":"1.2",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.75",
+            		"DcaSO3TakeProfitTarget":"5.25",
+					"Weight": "25"
+				}
+			},
+			{
+				"PercentageChange2": "3", // needs triggers optimized // increased 04/09
+				"PercentageChange3": "2.4", // needs triggers optimized
+				"Volume": "15000000",
+				"DcaCost1Offset": "15", // added 4/9
+				"DcaCost2Offset": "25",
+				"DcaCost3Offset": "35",
+				"DcaCost4Offset": "45",
+				"DcaCost5Offset": "55",
+				//needs offsets here
+				// decrease trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.6",
+            		"DcaTrailingProfit":"SZ * 0.6",
+
+					"DcaASellValue":"1.4",
+
+           			"DcaSO1TakeProfitTarget":"1.45",
+            		"DcaSO2TakeProfitTarget":"2.85",
+            		"DcaSO3TakeProfitTarget":"5.45",
+					//needs saftey conditions here
+					"Weight": "30"
+				}
+			}
+		]
+	},
+	"UpTrendScalpingStrategy2Grouping": {
+		// if the 1Hr topcoinschange% is more than x% and the short Ema is over the long EMA and is trending then set Scalping based Strategy 02.07 (Alternate Buy Strategy)
+		"Condition": "[pair.PercentageChange(1)] >= [config.PercentageChange1] && [pair.PercentageChange(2)] >= [config.PercentageChange2] && [market.TopCoinsChange(2)] >= -0.5 && [pair.Volume] >= [config.Volume] && [pair.ShortEma] > [pair.LongEma] && [pair.PercentageChange(4)] >= -0.1 && [pair.PercentageChange(4)] < 7",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"PercentageChange1": "1.02", // needs triggers optimized // increased 04/09
+				"PercentageChange2": "0.81", // needs triggers optimized // increased 20/08
+				"Volume": "15000000",
+				"DcaCost1Offset": "10", // added 4/9
+				"DcaCost2Offset": "20",
+				"DcaCost3Offset": "30",
+				"DcaCost4Offset": "40",
+				"DcaCost5Offset": "50",
+				//needs offsets here
+				// decrease trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.4",
+            		"DcaTrailingProfit":"SZ * 0.4",
+
+					"DcaASellValue":"1.2",
+
+           			"DcaSO1TakeProfitTarget":"1.0",
+            		"DcaSO2TakeProfitTarget":"2.5",
+            		"DcaSO3TakeProfitTarget":"5.0",
+					//needs saftey conditions here
+					"Weight": "40"
+				}
+			},
+			{
+				"PercentageChange1": "2.01", // needs triggers optimized // increased 04/09
+				"PercentageChange2": "1.5", // needs triggers optimized // decreased 04/09
+				"Volume": "15000000",
+				"DcaCost1Offset": "25", // added 4/9
+				"DcaCost2Offset": "35",
+				"DcaCost3Offset": "45",
+				"DcaCost4Offset": "55",
+				"DcaCost5Offset": "65",
+				//needs offsets here
+				// decrease trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.5",
+            		"DcaTrailingProfit":"SZ * 0.5",
+
+					"DcaASellValue":"1.4",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.75",
+            		"DcaSO3TakeProfitTarget":"5.25",
+					//needs saftey conditions here
+					"Weight": "40"
+				}
+			}
+		]
+	},
+	"DowndTrendScalpingStrategyGrouping": {
+		// if the 24hr pair % change is less than x% and topcoinschange% 24hr is more than x% the short ema is under the long then set downtrend scalping based strategies. 2.07 (Alternate Buy Strategy)
+		"Condition": "[pair.PercentageChange(4)] <= [config.PercentageChange4] && [market.TopCoinsChange(3)] >= 0.01 && [pair.Volume] >= [config.Volume] && [pair.ShortEma] < [pair.LongEma] && [pair.PercentageChange(4)] >= -8 && [pair.PercentageChange(4)] < 5",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"PercentageChange4": "-3.5", // 04/09
+				"Volume": "15000000",
+				"DcaCost1Offset": "-25", // added 4/9
+				"DcaCost2Offset": "-40",
+				"DcaCost3Offset": "-55",
+				"DcaCost4Offset": "-70",
+				"DcaCost5Offset": "-85",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.3",
+            		"DcaTrailingBuy":"SQ * 0.3",
+
+            		"TrailingProfit":"SZ * 0.3",
+            		"DcaTrailingProfit":"SZ * 0.3",
+
+					"DcaASellValue":"0.7",
+
+           			"DcaSO1TakeProfitTarget":"0.8",
+            		"DcaSO2TakeProfitTarget":"2.3",
+            		"DcaSO3TakeProfitTarget":"4.5",
+
+					//needs saftey conditions here
+					"Weight": "51"
+				}
+			},
+			{
+				"PercentageChange4": "-5.5", // 04/09
+				"Volume": "15000000",
+				"DcaCost1Offset": "-30", // added 4/9
+				"DcaCost2Offset": "-45",
+				"DcaCost3Offset": "-60",
+				"DcaCost4Offset": "-75",
+				"DcaCost5Offset": "-90",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.4",
+            		"DcaTrailingBuy":"SQ * 0.4",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.65",
+
+           			"DcaSO1TakeProfitTarget":"0.65",
+            		"DcaSO2TakeProfitTarget":"2.1",
+            		"DcaSO3TakeProfitTarget":"4.0",
+
+					//needs saftey conditions here
+					"Weight": "61"
+				}
+			},
+			{
+				"PercentageChange4": "-7.5", // 04/09
+				"Volume": "15000000",
+				"DcaCost1Offset": "-45", // added 4/9
+				"DcaCost2Offset": "-60",
+				"DcaCost3Offset": "-75",
+				"DcaCost4Offset": "-90",
+				"DcaCost5Offset": "-100",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.45",
+            		"DcaTrailingBuy":"SQ * 0.45",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.5",
+
+           			"DcaSO1TakeProfitTarget":"0.5",
+            		"DcaSO2TakeProfitTarget":"2.0",
+            		"DcaSO3TakeProfitTarget":"3.0",
+					//needs saftey conditions here
+					"Weight": "71"
+				}
+			}
+		]
+	},
+	"DowndTrendScalpingStrategy2Grouping": {
+		// if the 4hr pair % change is less than x% and topcoinschange 4hr is more than x% and the short ema is under the long then set downtrend scalping based strategies. 2.07 (Alternate Buy Strategy)
+		"Condition": "[pair.PercentageChange(4)] <= [config.PercentageChange4] && [market.TopCoinsChange(3)] >= 0.01 && [pair.Volume] >= [config.Volume] && [pair.ShortEma] < [pair.LongEma] && [pair.PercentageChange(4)] >= -8 && [pair.PercentageChange(4)] < 5",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"PercentageChange4": "-1.8", // 04/09
+				"Volume": "15000000",
+				"DcaCost1Offset": "-25", // added 4/9
+				"DcaCost2Offset": "-40",
+				"DcaCost3Offset": "-55",
+				"DcaCost4Offset": "-70",
+				"DcaCost5Offset": "-85",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.2",
+            		"DcaTrailingBuy":"SQ * 0.2",
+
+            		"TrailingProfit":"SZ * 0.3",
+            		"DcaTrailingProfit":"SZ * 0.3",
+
+					"DcaASellValue":"0.7",
+
+           			"DcaSO1TakeProfitTarget":"0.8",
+            		"DcaSO2TakeProfitTarget":"2.3",
+            		"DcaSO3TakeProfitTarget":"4.5",
+					//needs saftey conditions here
+					"Weight": "50"
+				}
+			},
+			{
+				"PercentageChange4": "-3.6", // 04/09
+				"Volume": "15000000",
+				"DcaCost1Offset": "-30", // added 4/9
+				"DcaCost2Offset": "-45",
+				"DcaCost3Offset": "-60",
+				"DcaCost4Offset": "-75",
+				"DcaCost5Offset": "-90",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.3",
+            		"DcaTrailingBuy":"SQ * 0.3",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.65",
+
+           			"DcaSO1TakeProfitTarget":"0.65",
+            		"DcaSO2TakeProfitTarget":"2.1",
+            		"DcaSO3TakeProfitTarget":"4.0",
+					//needs saftey conditions here
+					"Weight": "60"
+				}
+			},
+			{
+				"PercentageChange4": "-5.4", // 04/09
+				"Volume": "15000000",
+				"DcaCost1Offset": "-45", // added 4/9
+				"DcaCost2Offset": "-60",
+				"DcaCost3Offset": "-75",
+				"DcaCost4Offset": "-90",
+				"DcaCost5Offset": "-100",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.4",
+            		"DcaTrailingBuy":"SQ * 0.4",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.5",
+
+           			"DcaSO1TakeProfitTarget":"0.5",
+            		"DcaSO2TakeProfitTarget":"2.0",
+            		"DcaSO3TakeProfitTarget":"3.0",
+					//needs saftey conditions here
+					"Weight": "70"
+				}
+			}
+		]
+	},
+	"BearishTrendBasedStrategyGrouping": {
+		// if the 24hr pair % change is less than x% and 24hr topcoinschange% is less than x% and short Ema is under the long EMA then set Bearish Trend based strategies. 02.07 (Alternate Buy Strategy)
+		"Condition": "[pair.PercentageChange(4)] <= [config.PercentageChange4] && [market.TopCoinsChange(4)] <= [config.TopCoinTrendChange4] && [pair.Volume] >= [config.Volume] && [pair.ShortEma] < [pair.LongEma]",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"PercentageChange4": "-5.4", // needs triggers optimized // changed from -4.5% 04/09
+				"TopCoinTrendChange4": "-5.4", // needs triggers optimized // changed from -4.5% 04/09
+				"Volume": "20000000",
+				"DcaEnabled": "false",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.3",
+            		"DcaTrailingBuy":"SQ * 0.3",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.5",
+
+           			"DcaSO1TakeProfitTarget":"0.5",
+            		"DcaSO2TakeProfitTarget":"2.0",
+            		"DcaSO3TakeProfitTarget":"3.0",
+					//needs saftey conditions here
+					"Weight": "100"
+				}
+			},
+			{
+				"PercentageChange4": "-2.7", // needs triggers optimized // changed from -1.5% 04/09
+				"TopCoinTrendChange4": "-2.7", // needs triggers optimized // changed from -1.5% 04/09
+				"Volume": "20000000",
+				"DcaCost1Offset": "-45", // added 4/9
+				"DcaCost2Offset": "-60",
+				"DcaCost3Offset": "-75",
+				"DcaCost4Offset": "-90",
+				"DcaCost5Offset": "-100",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.35",
+            		"DcaTrailingBuy":"SQ * 0.35",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.65",
+
+           			"DcaSO1TakeProfitTarget":"0.65",
+            		"DcaSO2TakeProfitTarget":"2.1",
+            		"DcaSO3TakeProfitTarget":"4.0",
+					//needs saftey conditions here
+					"Weight": "90"
+				}
+			}
+		]
+	},
+	"BearishTrendBasedStrategy2Grouping": {
+		// if the 4hr pair % change is less than x% and 4hr topcoinschange% is less than x% and then short Ema is under the long EMA then set Bearish Trend based strategies. 02.07 (Alternate Buy Strategy)
+		"Condition": "[pair.PercentageChange(3)] <= [config.PercentageChange3] && [market.TopCoinsChange(3)] <= [config.TopCoinTrendChange3] && [pair.Volume] >= [config.Volume] && [pair.ShortEma] < [pair.LongEma]",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"PercentageChange3": "-3.6", // needs triggers optimized // changed from -3.5% 20/08
+				"TopCoinTrendChange3": "-3.6", // needs triggers optimized // changed from -3.5% 20/08
+				"Volume": "20000000",
+				"DcaCost1Offset": "-60", // added 4/9
+				"DcaCost2Offset": "-70",
+				"DcaCost3Offset": "-80",
+				"DcaCost4Offset": "-90",
+				"DcaCost5Offset": "-100",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.35",
+            		"DcaTrailingBuy":"SQ * 0.35",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.65",
+
+           			"DcaSO1TakeProfitTarget":"0.65",
+            		"DcaSO2TakeProfitTarget":"2.1",
+            		"DcaSO3TakeProfitTarget":"4.0",
+					//needs saftey conditions here
+					"Weight": "101"
+				}
+			},
+			{
+				"PercentageChange3": "-1.8", // needs triggers optimized // changed from -1.5% 20/08
+				"TopCoinTrendChange3": "-1.8", // needs triggers optimized // changed from -1.5% 20/08
+				"Volume": "20000000",
+				"DcaCost1Offset": "-30", // added 4/9
+				"DcaCost2Offset": "-45",
+				"DcaCost3Offset": "-60",
+				"DcaCost4Offset": "-75",
+				"DcaCost5Offset": "-90",
+				//needs offsets here
+				// increase trailing buy
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.3",
+            		"DcaTrailingBuy":"SQ * 0.3",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.65",
+
+           			"DcaSO1TakeProfitTarget":"0.65",
+            		"DcaSO2TakeProfitTarget":"2.1",
+            		"DcaSO3TakeProfitTarget":"4.0",
+					//needs saftey conditions here
+					"Weight": "91"
+				}
+			}
+		]
+	},
+/*	"PositiveDCA1Grouping": {
+		// this condition uses positive dca triggers on pairs in the dca log that have positive profit and a less/equal
+		// to dca level 3 and pair short sma is over the long (Position Management) 17.06 (Alternate Buy Strategy)
+		"Condition": "[pair.DcaCount] <= 2 && [pair.Profit] >= 0.33 && [pair.Volume] >= [config.Volume] && [pair.ShortEma] > [pair.LongEma] && [pair.PercentageChange(4)] >= -5 && [pair.PercentageChange(4)] < 5",
+		"Configs": [
+			{
+				"Volume": "20000000",
+				"DcaTrailingBuyOffset": "-100",
+				"DcaCost1Offset": "-10",
+				"DcaCost2Offset": "-20",
+				"Override": {
+					"InsertSnippets": "PositiveDcaDcaBuy,PositiveDcaTrig", //3.07 changed  to spanish
+					 "DcaMaxCost": "500",
+					"DcaMaxTradingPairsSoftCap":"7",
+					"Weight": "986"
+				}
+			}
+		]
+	},*/
+	// SMA Based Default Strategy // ** NEEDS OPTIMIZING lvl 2 risk
+	"BullishTrendBasedStrategyGrouping": {
+		// if the short EMA,SMA are both over the long and the short EMA is trending then set Bullish based strategies (Alternate Buy Strategy) 02.07
+		"Condition": "[pair.Volume] >= [config.Volume] && [pair.ShortSma] > [pair.LongSma] && [pair.ShortEma] > [pair.LongEma] && [pair.PercentageChange(4)] >= 1 && [pair.PercentageChange(4)] < 50",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"Volume": "25000000",
+				//needs offsets here
+				"DcaCost1Offset": "5", // added 8/9
+				"DcaCost2Offset": "10",
+				"DcaCost3Offset": "15",
+				"DcaCost4Offset": "20",
+				"DcaCost5Offset": "25",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.4",
+            		"DcaTrailingProfit":"SZ * 0.4",
+
+					"DcaASellValue":"1.25",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.75",
+            		"DcaSO3TakeProfitTarget":"5.25",
+					//needs saftey conditions here
+					"Weight": "100"
+				}
+			},
+			{
+				"Volume": "50000000", // changed from 2.5m to 5m
+				//needs offsets here
+				"DcaCost1Offset": "10", // added 8/9
+				"DcaCost2Offset": "20",
+				"DcaCost3Offset": "30",
+				"DcaCost4Offset": "40",
+				"DcaCost5Offset": "50",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.4",
+            		"DcaTrailingProfit":"SZ * 0.4",
+
+					"DcaASellValue":"1.25",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.75",
+            		"DcaSO3TakeProfitTarget":"5.25",
+					//needs saftey conditions here
+					"Weight": "110"
+				}
+			},
+			{
+				"Volume": "100000000", // changed from 2.5m to 10m
+				//needs offsets here
+				"DcaCost1Offset": "25", // added 8/9
+				"DcaCost2Offset": "40",
+				"DcaCost3Offset": "55",
+				"DcaCost4Offset": "70",
+				"DcaCost5Offset": "85",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.4",
+            		"DcaTrailingProfit":"SZ * 0.4",
+
+					"DcaASellValue":"1.25",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.75",
+            		"DcaSO3TakeProfitTarget":"5.25",
+					//needs saftey conditions here
+					"Weight": "120"
+				}
+			},
+			{
+				"Volume": "150000000", // changed from 2.5m to 15m
+				//needs offsets here
+				"DcaCost1Offset": "50", // added 8/9
+				"DcaCost2Offset": "75",
+				"DcaCost3Offset": "100",
+				"DcaCost4Offset": "125",
+				"DcaCost5Offset": "150",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.4",
+            		"DcaTrailingProfit":"SZ * 0.4",
+
+					"DcaASellValue":"1.25",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.75",
+            		"DcaSO3TakeProfitTarget":"5.25",
+					//needs saftey conditions here
+					"Weight": "130"
+				}
+			}
+		]
+	},
+	"BullishTrendBasedStrategy2Grouping": {
+		// if the 24hr topcoinschange% & 24hr pair % Change is more than x% and the volume is more than x and the Short EMA,SMA are both over the long then set Bullish Trend Based strategies. (Alternate Buy Strategy) 02.07
+		"Condition": "[pair.Volume] >= [config.Volume]  && [market.TopCoinsChange(4)] >= [config.TopCoinsChange4] && [pair.PercentageChange(4)] >= [config.PercentageChange4] && [pair.ShortSma] > [pair.LongSma] && [pair.ShortEma] > [pair.LongEma] && [pair.PercentageChange(4)] >= 1 && [pair.PercentageChange(4)] < 50",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"Volume": "25000000",
+				"TopCoinsChange4": "0.3", // needs triggers optimized
+				"PercentageChange4": "8.5",
+				//needs offsets here
+				"DcaCost1Offset": "5", // added 8/9
+				"DcaCost2Offset": "10",
+				"DcaCost3Offset": "15",
+				"DcaCost4Offset": "20",
+				"DcaCost5Offset": "25",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.4",
+            		"DcaTrailingProfit":"SZ * 0.4",
+
+					"DcaASellValue":"1.25",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.75",
+            		"DcaSO3TakeProfitTarget":"5.25",
+					//needs saftey conditions here
+					"Weight": "102"
+				}
+			},
+			{
+				"Volume": "50000000", // changed from 2.5m to 5m
+				"TopCoinsChange4": "0.6", // needs triggers optimized // changed from 0.3 20/08
+				"PercentageChange4": "8.5",
+				//needs offsets here
+				"DcaCost1Offset": "10", // added 8/9
+				"DcaCost2Offset": "20",
+				"DcaCost3Offset": "30",
+				"DcaCost4Offset": "40",
+				"DcaCost5Offset": "50",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.1",
+            		"DcaTrailingBuy":"SQ * 0.1",
+
+            		"TrailingProfit":"SZ * 0.45",
+            		"DcaTrailingProfit":"SZ * 0.45",
+
+					"DcaASellValue":"1.3",
+
+           			"DcaSO1TakeProfitTarget":"1.3",
+            		"DcaSO2TakeProfitTarget":"2.8",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "111"
+				}
+			},
+			{
+				"Volume": "20000000", // changed from 2.5m to 10m
+				"TopCoinsChange4": "0.9", // needs triggers optimized // changed from 0.3 20/08
+				"PercentageChange4": "8.5",
+				//needs offsets here
+				"DcaCost1Offset": "25", // added 8/9
+				"DcaCost2Offset": "40",
+				"DcaCost3Offset": "55",
+				"DcaCost4Offset": "70",
+				"DcaCost5Offset": "85",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.1",
+            		"DcaTrailingBuy":"SQ * 0.1",
+
+            		"TrailingProfit":"SZ * 0.5",
+            		"DcaTrailingProfit":"SZ * 0.5",
+
+					"DcaASellValue":"1.3",
+
+           			"DcaSO1TakeProfitTarget":"1.3",
+            		"DcaSO2TakeProfitTarget":"2.8",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "121"
+				}
+			},
+			{
+				"Volume": "15000000", // changed from 2.5m to 15m
+				"TopCoinsChange4": "1.2", // needs triggers optimized // changed from 0.3 20/08
+				"PercentageChange4": "8.5",
+				//needs offsets here
+				"DcaCost1Offset": "50", // added 8/9
+				"DcaCost2Offset": "75",
+				"DcaCost3Offset": "100",
+				"DcaCost4Offset": "125",
+				"DcaCost5Offset": "150",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.07",
+            		"DcaTrailingBuy":"SQ * 0.07",
+
+            		"TrailingProfit":"SZ * 0.55",
+            		"DcaTrailingProfit":"SZ * 0.55",
+
+					"DcaASellValue":"1.3",
+
+           			"DcaSO1TakeProfitTarget":"1.3",
+            		"DcaSO2TakeProfitTarget":"2.8",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "131"
+				}
+			}
+		]
+	},
+	"BreakoutStrategyGrouping": {
+		// if the 1hr,4hr pair % change is more than x% and volume is more than x and both the Short SMA,EMA are over then Long then set Breakout Based strategies. **NEEDS CONDITIONS (Alternate Buy Strategy) 03.07
+		"Condition": "[pair.Volume] >= [config.Volume] && [pair.PercentageChange(2)] >= [config.PercentageChange2] && [pair.PercentageChange(3)] >= [config.PercentageChange3] && [pair.ShortEma] > [pair.LongEma] && [pair.ShortSma] > [pair.LongSma] && [pair.PercentageChange(4)] >= 1 && [pair.PercentageChange(4)] < 20",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"Volume": "5000000",
+				"PercentageChange2": "1 ",
+				"PercentageChange3": "2", // needs triggers optimized
+				//needs offsets here
+				"DcaCost1Offset": "5", // added 9/9
+				"DcaCost2Offset": "10",
+				"DcaCost3Offset": "15",
+				"DcaCost4Offset": "20",
+				"DcaCost5Offset": "25",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.45",
+            		"DcaTrailingProfit":"SZ * 0.45",
+
+					"DcaASellValue":"1.25",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.8",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "140"
+				}
+			},
+			{
+				"Volume": "5000000",
+				"PercentageChange2": "2",
+				"PercentageChange3": "3", // needs triggers optimized
+				//needs offsets here
+				"DcaCost1Offset": "10", // added 9/9
+				"DcaCost2Offset": "20",
+				"DcaCost3Offset": "30",
+				"DcaCost4Offset": "40",
+				"DcaCost5Offset": "50",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.1",
+            		"DcaTrailingBuy":"SQ * 0.1",
+
+            		"TrailingProfit":"SZ * 0.5",
+            		"DcaTrailingProfit":"SZ * 0.5",
+
+					"DcaASellValue":"1.25",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.8",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "150"
+				}
+			},
+			{
+				"Volume": "5000000",
+				"PercentageChange2": "3",
+				"PercentageChange3": "4", // needs triggers optimized
+				//needs offsets here
+				"DcaCost1Offset": "25", // added 9/9
+				"DcaCost2Offset": "40",
+				"DcaCost3Offset": "55",
+				"DcaCost4Offset": "70",
+				"DcaCost5Offset": "85",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.07",
+            		"DcaTrailingBuy":"SQ * 0.07",
+
+            		"TrailingProfit":"SZ * 0.55",
+            		"DcaTrailingProfit":"SZ * 0.55",
+
+					"DcaASellValue":"1.25",
+
+           			"DcaSO1TakeProfitTarget":"1.25",
+            		"DcaSO2TakeProfitTarget":"2.8",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "160"
+				}
+			},
+			{
+				"Volume": "5000000",
+				"PercentageChange2": "4",
+				"PercentageChange3": "5", // needs triggers optimized
+				//needs offsets here
+				"DcaCost1Offset": "50", // added 9/9
+				"DcaCost2Offset": "75",
+				"DcaCost3Offset": "100",
+				"DcaCost4Offset": "125",
+				"DcaCost5Offset": "150",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.05",
+            		"DcaTrailingBuy":"SQ * 0.05",
+
+            		"TrailingProfit":"SZ * 0.55",
+            		"DcaTrailingProfit":"SZ * 0.55",
+
+					"DcaASellValue":"1.3",
+
+           			"DcaSO1TakeProfitTarget":"1.3",
+            		"DcaSO2TakeProfitTarget":"2.8",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "170"
+				}
+			}
+		]
+	},
+	"BreakoutStrategy2Grouping": {
+		// if the 1hr,4hr pair % change is more than x% and volume is more than x and both the Short SMA,EMA are over then Long then set Breakout Based strategies. **NEEDS CONDITIONS	 (Alternate Buy Strategy) 03.07
+		"Condition": "[pair.Volume] >= [config.Volume] && [pair.PercentageChange(2)] >= [config.PercentageChange2] && [pair.PercentageChange(3)] >= [config.PercentageChange3] && [pair.ShortEma] > [pair.LongEma] && [pair.ShortSma] > [pair.LongSma] && [pair.PercentageChange(4)] >= 1 && [pair.PercentageChange(4)] < 20",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"Volume": "5000000",
+				"PercentageChange2": "1",
+				"PercentageChange3": "6", // needs triggers optimized
+				//needs offsets here
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.15",
+            		"DcaTrailingBuy":"SQ * 0.15",
+
+            		"TrailingProfit":"SZ * 0.45",
+            		"DcaTrailingProfit":"SZ * 0.45",
+
+					"DcaASellValue":"1.3",
+
+           			"DcaSO1TakeProfitTarget":"1.3",
+            		"DcaSO2TakeProfitTarget":"2.8",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "141"
+				}
+			},
+			{
+				"Volume": "5000000",
+				"PercentageChange2": "2",
+				"PercentageChange3": "7", // needs triggers optimized
+				//needs offsets here
+				"DcaCost1Offset": "5", // added 9/9
+				"DcaCost2Offset": "10",
+				"DcaCost3Offset": "15",
+				"DcaCost4Offset": "20",
+				"DcaCost5Offset": "25",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.1",
+            		"DcaTrailingBuy":"SQ * 0.1",
+
+            		"TrailingProfit":"SZ * 0.5",
+            		"DcaTrailingProfit":"SZ * 0.5",
+
+					"DcaASellValue":"1.3",
+
+           			"DcaSO1TakeProfitTarget":"1.3",
+            		"DcaSO2TakeProfitTarget":"2.8",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "152"
+				}
+			},
+			{
+				"Volume": "5000000",
+				"PercentageChange2": "3",
+				"PercentageChange3": "8", // needs triggers optimized
+				//needs offsets here
+				"DcaCost1Offset": "25", // added 9/9
+				"DcaCost2Offset": "40",
+				"DcaCost3Offset": "55",
+				"DcaCost4Offset": "70",
+				"DcaCost5Offset": "85",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.07",
+            		"DcaTrailingBuy":"SQ * 0.07",
+
+            		"TrailingProfit":"SZ * 0.5",
+            		"DcaTrailingProfit":"SZ * 0.5",
+
+					"DcaASellValue":"1.4",
+
+           			"DcaSO1TakeProfitTarget":"1.4",
+            		"DcaSO2TakeProfitTarget":"3",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "162"
+				}
+			},
+			{
+				"Volume": "5000000",
+				"PercentageChange2": "4",
+				"PercentageChange3": "9", // needs triggers optimized
+				//needs offsets here
+				"DcaCost1Offset": "50", // added 9/9
+				"DcaCost2Offset": "75",
+				"DcaCost3Offset": "100",
+				"DcaCost4Offset": "125",
+				"DcaCost5Offset": "150",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.07",
+            		"DcaTrailingBuy":"SQ * 0.07",
+
+            		"TrailingProfit":"SZ * 0.5",
+            		"DcaTrailingProfit":"SZ * 0.5",
+
+					"DcaASellValue":"1.3",
+
+           			"DcaSO1TakeProfitTarget":"1.5",
+            		"DcaSO2TakeProfitTarget":"3.2",
+            		"DcaSO3TakeProfitTarget":"5.3",
+					//needs saftey conditions here
+					"Weight": "172"
+				}
+			}
+		]
+	},
+	"BottomFinderSrategyGrouping": {
+		// if the SMA spread is more than -5.5% and 4hr pair % change is less than x% and volume is more than x then appply bottom finder based strategy (Alternate Buy Strategy)
+		"Condition": "[pair.Volume] >= [config.Volume] && [pair.PercentageChange(3)] <= [config.PercentageChange3] && ([pair.LongSma] - [pair.ShortSma]) *100 < [config.SmaSpread] && [pair.PercentageChange(4)] >= -25 && [pair.PercentageChange(4)] < -5",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"Volume": "2500000", //changed 250 18.06// needs triggers optimized
+				"SmaSpread": "-5",
+				"PercentageChange3": "-9.5",
+				//needs offsets here
+				"DcaCost1Offset": "-10", // added 4/9
+				"DcaCost2Offset": "-20",
+				"DcaCost3Offset": "-30",
+				"DcaCost4Offset": "-40",
+				"DcaCost5Offset": "-50",
+				"Override": {
+					"ABuyStrategyBuyValue":"-1.1",
+
+            		"TrailingBuy":"SQ * 0.35",
+            		"DcaTrailingBuy":"SQ * 0.35",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.6",
+
+           			"DcaSO1TakeProfitTarget":"0.6",
+            		"DcaSO2TakeProfitTarget":"2",
+            		"DcaSO3TakeProfitTarget":"3.5",
+					"StickyTimer": "120",
+					"Weight": "897"
+				}
+			}
+		]
+	},
+	/*"KnockoutPunchDCAGrouping": {
+		// if the 24hr topcoinschange% is more than x% and 4hr pair % change is more than x% and the then SMA spread is less than x% then apply Knockout punch Dca strategy.(Alternate Buy Strategy) 03.07
+		"Condition": "[market.TopCoinsChange(4)] >= [config.TopCoinsChange4] && [pair.PercentageChange(3)] >= [config.PercentageChange3] && [pair.Volume] >= [config.Volume] && ([pair.LongSma] - [pair.ShortSma]) *100 < [config.SmaSpread] && [pair.PercentageChange(4)] >= -1 && [pair.PercentageChange(4)] < 5",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"TopCoinsChange4": "3", // needs triggers optimized
+				"PercentageChange3": "3",
+				"SmaSpread": "2",
+				"Volume": "3000000",
+				//needs offsets here
+				"Override": {
+					
+					"InsertSnippets": "KnockoutPunchDcaBuy,KnockoutPunchDca%",
+					"Weight": "850"
+				}
+			}
+		]
+	},*/
+
+
+	/*"BtcPumpStrategyGroupng": {
+		// (Safety Protection) 11.07 NOT WORKING // wanting to create a btc config to ride the upward trend using aggressive buy strategy and positive dca
+		"Condition": "[market.TotalMarketCap(4)] - [market.Previous.TotalMarketCap(4)] <= [config.MarketCapDifference4%] && [market.BtcDominance(4)] - [market.Previous.BtcDominance(4)] <= [config.BtcDomDifference4%] && [pair.QuoteCurrency] == [config.Name]",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"MarketCapDifference4%": "1", // ** NEEDS OPTIMIZING
+				"BtcDomDifference4%": "1", // ** NEEDS OPTIMIZING
+				"Name": "BTC",
+				"InitialCostOffset": "1000",
+				//need offsets here
+				"Override": {
+					"InsertSnippets": "FibonacciSwingtraderBuy",
+					"DcaMaxTradingPairsSoftCap":"15",
+					"Weight": "999"
+				}
+			}
+		]
+	},*/
+
+	/************** Safety Protection Overrides and Offsets ************************************************************************************************************************************************************************************************************/
+	// Market Conditions // ** NEEDS OPTIMIZING
+	"24HrCriticalMarketDownTrendGrouping": {
+		//this condition uses Bottomfinder buy strategy and conservative dca triggers when top coin change(6hr) is less/equal to -10%, (Safety Protection) 02.07  (Alternate Buy Strategy)
+		"Condition": "[market.TopCoinsChange(4)] <= [config.TopCoinsChange4] && [market.TopCoinsChange(3)] <= -0.01", //needs better condition ie 4hr vs 24hr or previous value calculations
+		"Configs": [
+			{
+				"TopCoinsChange4": "-1.5" // needs triggers optimized
+				//need offsets here
+			},
+			{
+				"TopCoinsChange4": "-3.5" // needs triggers optimized
+				//need offsets here
+			},
+			{
+				"TopCoinsChange4": "-5.5" // needs triggers optimized
+				//need offsets here
+			},
+			{
+				"TopCoinsChange4": "-7.5", // needs triggers optimized
+				//need offsets here
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+					"ABuyStrategyBuyValue":"-2",
+
+            		"TrailingBuy":"SQ * 0.4",
+            		"DcaTrailingBuy":"SQ * 0.4",
+
+            		"TrailingProfit":"SZ * 0.2",
+            		"DcaTrailingProfit":"SZ * 0.2",
+
+					"DcaASellValue":"0.65",
+
+           			"DcaSO1TakeProfitTarget":"0.65",
+            		"DcaSO2TakeProfitTarget":"2.0",
+            		"DcaSO3TakeProfitTarget":"3.5",
+
+					"StickyTimer": "240",
+					//need safety conditions here
+					"Weight": "997"
+				}
+			},
+			{
+				"TopCoinsChange4": "-9.5", // needs triggers optimized
+				//need offsets here
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+					
+					"StickyTimer": "240",
+					//need safety conditions here
+					"Weight": "997"
+				}
+			}
+		]
+	},
+	"4HrCriticalMarketDownTrendGrouping": {
+		//	(Safety Protection) 02.07
+		"Condition": "[market.TopCoinsChange(3)] <= [config.TopCoinsChange3] && [market.TopCoinsChange(2)] <= -0.01",
+		"Configs": [
+			{
+				"TopCoinsChange3": "-1" // needs triggers optimized
+				//need offsets here
+				//need overides here
+				//need safety conditions here
+			},
+			{
+				"TopCoinsChange3": "-3" // needs triggers optimized
+				//need offsets here
+				//need overides here
+				//need safety conditions here
+			},
+			{
+				"TopCoinsChange3": "-5" // needs triggers optimized
+				//need offsets here
+				//need overides here
+				//need safety conditions here
+			},
+			{
+				"TopCoinsChange3": "-7" // needs triggers optimized
+				//need offsets here
+				//need overides here
+				//need safety conditions here
+			},
+			{
+				"TopCoinsChange3": "-9", // needs triggers optimized
+				//need offsets here
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+					
+					"StickyTimer": "240",
+					//need safety conditions here
+					"Weight": "997"
+				}
+			}
+		]
+	},
+	"1HrCriticalMarketDownTrendGrouping": {
+		//this condition uses Bottomfinder buy strategy and conservative dca triggers when top coin change(1hr) is less/equal to -2%, (Safety Protection) 02.07  (Alternate Buy Strategy)
+		"Condition": "[market.TopCoinsChange(2)] <= [config.TopCoinsChange2] && [market.TopCoinsChange(1)] <= -0.01",
+		"Configs": [
+			{
+				"TopCoinsChange2": "-1" // needs triggers optimized
+				//need offsets here
+			},
+			{
+				"TopCoinsChange2": "-3" // needs triggers optimized
+				//need offsets here
+			},
+			{
+				"TopCoinsChange2": "-5" // needs triggers optimized
+				//need offsets here
+			},
+			{
+				"TopCoinsChange2": "-7", // needs triggers optimized
+				//need offsets here
+				"Override": {
+					//"InsertSnippets": "BottomFinderDcaBuy,BottmfinderDcaTrig,AndersonDca%",
+					"StickyTimer": "240",
+					"Weight": "999"
+				}
+			},
+			{
+				"TopCoinsChange2": "-9", // needs triggers optimized
+				//need offsets here
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+					
+					"StickyTimer": "240",
+					//need safety conditions here
+					"Weight": "997"
+				}
+			}
+		]
+	},
+	"15MinCriticalMarketDownTrendGrouping": {
+		//this condition uses Bottomfinder buy strategy and conservative dca triggers when top coin change(15min) is less/equal to -2%, (Safety Protection) 02.07  (Alternate Buy Strategy)
+		"Condition": "[market.TopCoinsChange(1)] <= [config.TopCoinsChange1] && [market.TopCoinsChange(1)] <= [market.Previous.TopCoinsChange(1)]",
+		"Configs": [
+			{
+				"TopCoinsChange1": "-1" // needs triggers optimized
+			},
+			{
+				"TopCoinsChange1": "-2" // needs triggers optimized
+			},
+			{
+				"TopCoinsChange1": "-3", // needs triggers optimized
+				//need offsets here
+				"Override": {
+					//"InsertSnippets": "BottomFinderBuy,BottomFinderDcaBuy,BottmfinderDcaTrig,AndersonDca%",
+					"StickyTimer": "240",
+					"Weight": "999"
+				}
+			},
+			{
+				"TopCoinsChange1": "-5", // needs triggers optimized
+				//need offsets here
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+					
+					"StickyTimer": "240",
+					//need safety conditions here
+					"Weight": "997"
+				}
+			}
+		]
+	},
+	
+	"MarketVWAPChangeGrouping": {
+		// 10.07 (Alternate Buy Strategy)
+		"Condition": "[market.VwapChange(4)] <= [config.LongTermVwapChange4]", //10.07
+		"Configs": [
+			{
+				"LongTermVwapChange4": "-9.5", // needs triggers optimized
+				//need offsets here
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+					//"InsertSnippets": "BottomFinderBuy,BottomFinderDcaBuy,SuperBearDcaTrig,AndersonDca%",
+					"StickyTimer": "240",
+					//need safety conditions here
+					"Weight": "997"
+				}
+			},
+			{
+				"LongTermVwapChange4": "-4.5", // needs triggers optimized
+				//need offsets here
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+					//"InsertSnippets": "BottomFinderBuy,BottomFinderDcaBuy,SuperBearDcaTrig,AndersonDca%",
+					"StickyTimer": "240",
+					//need safety conditions here
+					"Weight": "997"
+				}
+			},
+			{
+				"LongTermVwapChange4": "0.01" // needs triggers optimized
+				//need offsets here
+			},
+			{
+				"LongTermVwapChange4": "4.5" // needs triggers optimized
+				//need offsets here
+			},
+			{
+				"LongTermVwapChange4": "100" // needs triggers optimized
+			}
+		]
+	},
+	"BTCDominanceGroupng": {
+		// (Safety Protection) 11.07 NOT WORKING
+		"Condition": "[market.BtcDominance(4)] - [market.Previous.BtcDominance(4))] <= [config.Difference4%]",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"Difference4%": "0.5", // ** NEEDS OPTIMIZING
+				//need offsets here
+				"Override": {
+					"Weight": "999"
+				}
+			}
+		]
+	},
+	"MarketCapGroupng": {
+		// (Safety Protection) 11.07 NOT WORKING
+		"Condition": "[market.TotalMarketCap(4)] - [market.Previous.TotalMarketCap(4)] <= [config.Difference4%]",
+		"Configs": [
+			{
+				//needs conditions changed/optimized
+				"Difference4%": "-1.7", // ** NEEDS OPTIMIZING
+				//need offsets here
+				"Override": {
+					"Weight": "999"
+				}
+			}
+		]
+	},
+	// Pair Conditions // ** NEEDS OPTIMIZING
+	"24HrPriceTrendChangeGrouping": {
+		//this condition uses SOM and conservative dca triggers when top coin change(24hr) is less/equal to -20%, (Safety Protection)
+		"Condition": "[pair.PercentageChange(4)] <= [config.PercentageChange4]",
+		"Configs": [
+			{
+				"PercentageChange4": "-10", // need to optimize
+				//need offsets here
+				//decrease DCA buy %
+				"DcaCostOffset": "-30",
+				"Override": {
+					 //changed 26.06
+					//"InsertSnippets": "ConservativeDcaTrig",
+					"Weight": "990"
+				}
+			},
+			{
+				"PercentageChange4": "-7.5", // need to optimize
+				//need offsets here
+				//decrease DCA buy %
+				"DcaCostOffset": "-20",
+				"Override": {
+					 //changed 26.06
+					//"InsertSnippets": "ConservativeDcaTrig",
+					"Weight": "990"
+				}
+			},
+			{
+				"PercentageChange4": "-4.5", // need to optimize
+				//need offsets here
+				//decrease DCA buy %
+				"DcaCostOffset": "-10",
+				"Override": {
+					 //changed 26.06
+					//"InsertSnippets": "ConservativeDcaTrig",
+					"Weight": "990"
+				}
+			}
+		]
+	},
+	"4HrPriceTrendChangeGrouping": {
+		//this condition checks the 6hr price change of each pair and applies offsets and overrides,	(Safety Protection) 02.07 (Alternate Buy Strategy)
+		"Condition": "[pair.PercentageChange(3)] <= [config.MaxPriceTrendPercentageChange]",
+		"Configs": [
+			{
+				"MaxPriceTrendPercentageChange": "-7.5", //changed -5.5 3.07
+				//need offsets here
+				"Override": {
+					//"InsertSnippets": "BottomFinderBuy,BottomFinderDcaBuy,AndersonDca%,ConservativeDcaTrig",
+					"StickyTimer": "240",
+					//need safety conditions here
+					"Weight": "991"
+				}
+			},
+			{
+				"MaxPriceTrendPercentageChange": "-4.5", //changed -5.5 3.07
+				//need offsets here
+				"Override": {
+				//	"InsertSnippets": "BottomFinderBuy,BottomFinderDcaBuy,AndersonDca%,ConservativeDcaTrig",
+					"StickyTimer": "240",
+					//need safety conditions here
+					"Weight": "991"
+				}
+			},
+			{
+				"MaxPriceTrendPercentageChange": "-3.5" //changed -5.5 3.07
+			}
+		]
+	},
+	"1HrPriceTrendChangeGrouping": {
+		//this condition checks the 1hr price change of each pair and applies offsets and overrides,	(Safety Protection) 02.07 (Alternate Buy Strategy)
+		"Condition": "[pair.PercentageChange(2)] <= [config.MaxPriceTrendPercentageChange2]",
+		"Configs": [
+			{
+				"MaxPriceTrendPercentageChange2": "-5.5",
+				"Override": {
+				//	"InsertSnippets": "BottomFinderBuy,BottomFinderDcaBuy,SuperBearDcaTrig,AndersonDca%",
+					"StickyTimer": "240",
+					"Weight": "990"
+				}
+			},
+			{
+				"MaxPriceTrendPercentageChange2": "-4.5"
+			},
+			{
+				"MaxPriceTrendPercentageChange2": "-3.5"
+			},
+			{
+				"MaxPriceTrendPercentageChange2": "-2.5"
+			}
+		]
+	},
+	"KeepBalancePercentageGrouping": {
+		//keeps the bot from buying new pairs when available trading funds is less than 69% of tcv (Safety Protection) (Position Management) 30.06
+		/// I've never seen this kick in. Track this.
+		"Condition": "(([positions.TotalPairsBoughtCost] + [positions.TotalDcaBoughtCost]+ [positions.TotalPendingBoughtCost]) / ([positions.RealBalance])) * 100 >= [config.Drawdown]",
+		"Configs": [
+			{
+				"Drawdown": "69",
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+					"Weight": "999"
+				}
+			}
+		]
+	},
+	"MaxCostPercentageGrouping": {
+		//Keeps the Bot from using  more than 10% of tcv on any pair (Safety Protection) (Position Management) 30.06
+		"Condition": "[pair.TotalCost] / (([positions.RealBalance] )+ [positions.TotalPendingBoughtCost] + [positions.TotalDcaBoughtCost]) * 100 >= [config.Drawdown]",
+		"Configs": [
+			{
+				"Drawdown": "10",
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+				//"DcaMaxCost": "400",
+					"MaxCost": "250", //was 4k
+					"InsertSnippets": "SafetyDcaTrig",
+					"Weight": "990"
+				}
+			}
+		]
+	},
+	"KnockoutPunchDCA2Grouping": {
+		//Increase Dca level for the Use of Knockout Punch Dca 100% rebuy at level 6 or 7 if totalcost is less than 5.5% of tcv (Safety Protection) (Position Management) (Alternate Buy Strategy) 30.06
+		"Condition": "[pair.TotalCost] / (([positions.RealBalance] ) + [positions.TotalDcaBoughtCost] + [positions.TotalPendingBoughtCost]) * 100 <= [config.Drawdown] && [pair.DcaCount] >= [config.DcaCount] && [pair.Profit] <= [config.Profit] && [pair.Volume] >= [config.Volume]",
+		"Configs": [
+			{
+				"Drawdown": "9", //this is the cost % of your tcv
+				"DcaCount": "5",
+				"Profit": "-6",
+				"Volume": "2000000",
+				"Override": {
+					"DcaCost": "20",
+				//	"InsertSnippets": "KnockoutPunch2DcaBuy,KnockoutPunchDcaTrig",
+					"Weight": "898"
+				}
+			},
+			{
+				"Drawdown": "8", //this is the cost % of your tcv
+				"DcaCount": "5",
+				"Profit": "-6",
+				"Volume": "2000000",
+				"Override": {
+					"DcaCost": "40",
+				//	"InsertSnippets": "KnockoutPunch2DcaBuy,KnockoutPunchDcaTrig",
+					"Weight": "898"
+				}
+			},
+			{
+				"Drawdown": "7", //this is the cost % of your tcv
+				"DcaCount": "5",
+				"Profit": "-6",
+				"Volume": "2000000",
+				"Override": {
+			//		"InsertSnippets": "KnockoutPunch2DcaBuy,KnockoutPunchDcaTrig",
+					"Weight": "898"
+				}
+			},
+			{
+				"Drawdown": "6", //this is the cost % of your tcv
+				"DcaCount": "5",
+				"Profit": "-6",
+				"Volume": "2000000",
+				"Override": {
+					"DcaCost": "80",
+			//	"InsertSnippets": "KnockoutPunch2DcaBuy,KnockoutPunchDcaTrig",
+					"Weight": "898"
+				}
+			},
+			{
+				"Drawdown": "5", //this is the cost % of your tcv
+				"DcaCount": "5",
+				"Profit": "-6",
+				"Volume": "2000000",
+				"Override": {
+					"DcaCost": "100",
+				//	"InsertSnippets": "KnockoutPunch2DcaBuy,KnockoutPunchDcaTrig",
+					"Weight": "898"
+				}
+			},
+			{
+				"Drawdown": "4", //this is the cost % of your tcv
+				"DcaCount": "5",
+				"Profit": "-6",
+				"Volume": "2000000",
+				"Override": {
+					"DcaCost": "100",
+			//		"InsertSnippets": "KnockoutPunch2DcaBuy,KnockoutPunchDcaTrig",
+					"Weight": "898"
+				}
+			}
+		]
+	},
+	/*************** Position Management Overrides and Offsets ****************************************************************************************************************************************************************************************************/
+	//** NEEDS OPTIMIZING
+	"ScalpingStrategyGrouping": {
+		//this grouping applies scalping based sell strategy on coins for 6 hr since first bought (Safety Protection) (Position Management) 11.07
+		"Condition": "[pair.FirstBoughtInMinutes] <= [config.Minutesbought] && [pair.Profit] >= [config.Profit] && [pair.DcaCount] < 1 && [pair.PendingCount] < 1",
+		"Configs": [
+			{
+				"Minutesbought": "360",
+				"Profit": "-2",
+				//need offsets here
+				"Override": {
+			//		"InsertSnippets": "ScalpingStrategy,ScalpingTakeProfit",
+					"Weight": "950"
+				}
+			}
+		]
+	},
+	"ATRInitialCostCalcGrouping": {
+		//Checks the pairs Current/Previous Average True Range Percent Values against the Market and sets INITIAL Cost Percent Based off its calculations (Safety Protection) (Position Management) 26.06
+		"Condition": "[pair.Atrp(3)]*6.5 <= [config.Atrp3] && [market.TopCoinsChange(3)] >= [config.TopCoinsChange3] && [pair.Volume] >= [config.Volume]",
+		"Configs": [
+			{
+				// x6.5 multiplier
+				"Atrp3": "1.55",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "4"
+			},
+			{
+				"Atrp3": "1.65",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "6"
+			},
+			{
+				"Atrp3": "1.75",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "8"
+			},
+			{
+				"Atrp3": "1.85",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "10"
+			},
+			{
+				"Atrp3": "1.95",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "12"
+			},
+			{
+				"Atrp3": "2.05",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "14"
+			},
+			{
+				"Atrp3": "2.15",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "16"
+			},
+			{
+				"Atrp3": "2.25",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "18"
+			},
+			{
+				"Atrp3": "2.35",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "20"
+			},
+			{
+				"Atrp3": "2.45",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "22"
+			},
+			{
+				"Atrp3": "2.5",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2000000",
+				"InitialCostOffset": "24"
+			},
+			{
+				"Atrp3": "2.55",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2500000",
+				"InitialCostOffset": "26"
+			},
+			{
+				"Atrp3": "2.6",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2500000",
+				"InitialCostOffset": "28"
+			},
+			{
+				"Atrp3": "2.65",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2500000",
+				"InitialCostOffset": "30"
+			},
+			{
+				"Atrp3": "2.7",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2500000",
+				"InitialCostOffset": "32"
+			},
+			{
+				"Atrp3": "2.75",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2500000",
+				"InitialCostOffset": "34"
+			},
+			{
+				"Atrp3": "2.8",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2500000",
+				"InitialCostOffset": "36"
+			},
+			{
+				"Atrp3": "2.85",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2500000",
+				"InitialCostOffset": "38"
+			},
+			{
+				"Atrp3": "2.9",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2500000",
+				"InitialCostOffset": "40"
+			},
+			{
+				"Atrp3": "2.95",
+				"TopCoinsChange3": "0.01",
+				"Volume": "2500000",
+				"InitialCostOffset": "42"
+			},
+			{
+				"Atrp3": "3.1",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3000000",
+				"InitialCostOffset": "44"
+			},
+			{
+				"Atrp3": "3.2",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3000000",
+				"InitialCostOffset": "46"
+			},
+			{
+				"Atrp3": "3.3",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3000000",
+				"InitialCostOffset": "48"
+			},
+			{
+				"Atrp3": "3.4",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3000000",
+				"InitialCostOffset": "50"
+			},
+			{
+				"Atrp3": "3.5",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3000000",
+				"InitialCostOffset": "53"
+			},
+			{
+				"Atrp3": "3.6",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3000000",
+				"InitialCostOffset": "56"
+			},
+			{
+				"Atrp3": "3.8",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3000000",
+				"InitialCostOffset": "60"
+			},
+			{
+				"Atrp3": "3.9",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3000000",
+				"InitialCostOffset": "63"
+			},
+			{
+				"Atrp3": "4",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3500000",
+				"InitialCostOffset": "66"
+			},
+			{
+				"Atrp3": "4.1",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3500000",
+				"InitialCostOffset": "70"
+			},
+			{
+				"Atrp3": "4.2",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3500000",
+				"InitialCostOffset": "73"
+			},
+			{
+				"Atrp3": "4.3",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3500000",
+				"InitialCostOffset": "76"
+			},
+			{
+				"Atrp3": "4.4",
+				"TopCoinsChange3": "0.01",
+				"Volume": "3500000",
+				"InitialCostOffset": "80"
+			}
+		]
+	},
+	"ATRInitialCostOffsetGrouping": {
+		//Checks the pairs Current/Previous Average True Range Percent Values against the Market and sets INITIAL Cost Percent Based off its calculations (Safety Protection)	(Position Management) 26.06
+		"Condition": "([pair.Atrp(3)] - [pair.Previous.Atrp(3)]) *6.5 <= [config.Atrpd3] && ([market.TopCoinsAtrpAverage(3)] - [market.Previous.TopCoinsAtrpAverage(3)]) *6.5 <= [config.MarketAtrpd3]",
+		"Configs": [
+			{
+				// x6.5 multiplyer // NOT WORKING
+				"Atrpd3": "-1.4", //difference between pair atrp and previous value
+				"MarketAtrpd3": "-1.4", //difference between market atrp and previous value
+				"InitialCostOffset": "-35"
+			},
+			{
+				"Atrpd3": "-1.2",
+				"MarketAtrpd3": "-1.2",
+				"InitialCostOffset": "-30"
+			},
+			{
+				"Atrpd3": "-1",
+				"MarketAtrpd3": "-1",
+				"InitialCostOffset": "-25"
+			},
+			{
+				"Atrpd3": "-0.8",
+				"MarketAtrpd3": "-0.8",
+				"InitialCostOffset": "-20"
+			},
+			{
+				"Atrpd3": "-0.6",
+				"MarketAtrpd3": "-0.6",
+				"InitialCostOffset": "-15"
+			},
+			{
+				"Atrpd3": "-0.4",
+				"MarketAtrpd3": "-0.4",
+				"InitialCostOffset": "-10"
+			},
+			{
+				"Atrpd3": "-0.2",
+				"MarketAtrpd3": "-0.2",
+				"InitialCostOffset": "-5"
+			},
+			{
+				"Atrpd3": "0.0",
+				"MarketAtrpd3": "0.0"
+			},
+			{
+				"Atrpd3": "0.2",
+				"MarketAtrpd3": "0.2",
+				"InitialCostOffset": "5"
+			},
+			{
+				"Atrpd3": "0.4",
+				"MarketAtrpd3": "0.4",
+				"InitialCostOffset": "10"
+			},
+			{
+				"Atrpd3": "0.6",
+				"MarketAtrpd3": "0.6",
+				"InitialCostOffset": "15"
+			},
+			{
+				"Atrpd3": "0.8",
+				"MarketAtrpd3": "0.8",
+				"InitialCostOffset": "20"
+			},
+			{
+				"Atrpd3": "1",
+				"MarketAtrpd3": "1",
+				"InitialCostOffset": "25"
+			},
+			{
+				"Atrpd3": "1.2",
+				"MarketAtrpd3": "1.2",
+				"InitialCostOffset": "30"
+			}
+		]
+	},
+	"IncreasedPairsExposurePositionGrouping": {
+		//(Position Management)
+		"Condition": "(([positions.TotalPairsCurrentValue] - [positions.TotalPairsBoughtCost]) / [positions.TotalPairsBoughtCost]) * 100 < [config.MaxPosition]",
+		"Configs": [
+			{
+				"MaxPosition": "-6",
+				"ASellValueOffset": "-25",
+				"DcaASellValueOffset": "-25"
+			},
+			{
+				"MaxPosition": "-3",
+				"ASellValueOffset": "-10",
+				"DcaASellValueOffset": "-10"
+			},
+			{
+				"MaxPosition": "-2",
+				"ASellValueOffset": "-5",
+				"DcaASellValueOffset": "-5"
+			}
+		]
+	},
+	"IncreasedDcaExposurePositionGrouping": {
+		// (Position Management)
+		"Condition": "(([positions.TotalDcaCurrentValue] - [positions.TotalDcaBoughtCost]) / [positions.TotalDcaBoughtCost]) * 100 < [config.MaxPosition]",
+		"Configs": [
+			{
+				"MaxPosition": "-6",
+				"ASellValueOffset": "-25",
+				"DcaASellValueOffset": "-25"
+			},
+			{
+				"MaxPosition": "-3",
+				"ASellValueOffset": "-10",
+				"DcaASellValueOffset": "-10"
+			},
+			{
+				"MaxPosition": "-2",
+				"ASellValueOffset": "-5",
+				"DcaASellValueOffset": "-5"
+			}
+		]
+	},
+	"DecreasedTradingPairsGrouping": {
+		//this condition decreases the max trading pairs when your exposure is more/equal to x% of TCV (Position Management) 30.06
+		// added total pairs bought cost to the right hand side of the equasion
+		"Condition": "(([positions.TotalPairsBoughtCost] + [positions.TotalDcaBoughtCost] + [positions.TotalPendingBoughtCost]) / (([positions.RealBalance] )+ [positions.TotalPairsBoughtCost] + [positions.TotalDcaBoughtCost] + [positions.TotalPendingBoughtCost])) * 100 >= [config.Exposure]",
+		"Configs": [
+			{
+				"Exposure": "95", //changed from 50% 06/01 cpw
+				"MaxTradingPairsSoftCapOffset": "-30" // decrease pairs by 30%
+			},
+			{
+				"Exposure": "75", //chnaged from 25%
+				"MaxTradingPairsSoftCapOffset": "15" // decrease pairs by 15%
+			}
+		]
+	},
+	"IncreasedTradingPairsGrouping": {
+		//this condition increases the max trading pairs when your exposure is less/equal to x% of TCV (Position Management) 30.06
+		"Condition": "(([positions.TotalPairsBoughtCost] + [positions.TotalDcaBoughtCost] + [positions.TotalPendingBoughtCost]) / (([positions.RealBalance]) + [positions.TotalPairsBoughtCost] + [positions.TotalDcaBoughtCost] + [positions.TotalPendingBoughtCost])) * 100 <= [config.Exposure]",
+		"Configs": [
+			{
+				"Exposure": "5",
+				"MaxTradingPairsSoftCapOffset": "30" // increase pairs by 30%
+			},
+			{
+				"Exposure": "13",
+				"MaxTradingPairsSoftCapOffset": "15" // increase pairs by 15%
+			}
+		]
+	},
+	"DefenderPositionManagmentSafetyGrouping": {
+		//this condition will offset the max trading pairs based off how many coins are in pending 30.06 (Position Management)(Safety Protection)
+		"Condition": "[positions.PendingCoinCount] >= [config.PendingCount]",
+		"Configs": [
+			{
+				"PendingCount": "1",
+				"MaxTradingPairsSoftCapOffset": "-15"
+			},
+			{
+				"PendingCount": "2",
+				"MaxTradingPairsSoftCapOffset": "-25"
+			},
+			{
+				"PendingCount": "3",
+				"MaxTradingPairsSoftCapOffset": "-35"
+			}
+		]
+	},
+	"HighDcaExposureSafetyGrouping": {
+		//Keeps the bot from over extending when you reach max dca limit of 9	(Safety Protection)	(Position Management) 30.06
+		"Condition": "[positions.DcaCoinCount] >= [config.DcaCoinCount] ",
+		"Configs": [
+			{
+				"DcaCoinCount": "9",
+				"MaxTradingPairsSoftCapOffset": "-20"
+			}
+		]
+	},
+	"HighDcaExposureSafety2Grouping": {
+		//Keeps the bot from over extending when you reach 50% of available dca funds (Safety Protection) (Position Management) 30.06
+		"Condition": "[positions.TotalDcaBoughtCost] >= [positions.DcaBalance] ",
+		"Configs": [
+			{
+				"Override": {
+					"SellOnlyModeEnabled": "true",
+					"StickyTimer": "1440",
+					"Weight": "999"
+				}
+			}
+		]
+	},
+
+	"SuperBullStrategyGrouping":{
+		"Condition":"[pair.LastPrice] > [pair.LongerSma] && [pair.ShorterSma] > [pair.LongerSma] && [pair.ShorterEma] > [pair.LongerEma]", 
+		"Configs":[{
+					"Override":{
+						//BUY SETTINGS
+						"ABuyValue":"-0.8",
+	
+						"TrailingBuy":"SQ * 0.1",
+						"TrailingProfit":"SZ * 0.4",
+						
+						//DCA SETTINGS
+						"DcaEBuyValue":"-0.8",
+						"DcaASellValue":"1.1",
+	
+						"DcaTrailingBuy":"SQ * 0.1",
+						"DcaTrailingProfit":"SZ * 0.4",
+	
+						
+						"Weight":"1100"
+					}
+					}
+				]
+			},
+	
+		"BullStrategyGrouping":{
+			"Condition":"[pair.LastPrice] > [pair.LongerSma] && [pair.ShorterSma] > [pair.LongerSma]", 
+			"Configs":[{
+						"Override":{
+							//BUY SETTINGS
+							"ABuyValue":"-1.1",
+		
+							"TrailingBuy":"SQ * 0.15",
+							"TrailingProfit":"SZ * 0.3",
+							
+							//DCA SETTINGS
+							"DcaEBuyValue":"-1.1",
+							"DcaASellValue":"1",
+		
+							"DcaTrailingBuy":"SQ * 0.15",
+							"DcaTrailingProfit":"SZ * 0.3",
+		
+							
+							"Weight":"1200"
+						}
+						}
+					]
+				},
+	
+		"BearStrategyGrouping":{
+			"Condition":"[pair.LastPrice] < [pair.LongerSma] && [pair.ShorterSma] < [pair.LongerSma]", 
+			"Configs":[{
+						"Override":{
+							//BUY SETTINGS
+							"ABuyValue":"-1.9",
+		
+							"TrailingBuy":"SQ * 0.25",
+							"TrailingProfit":"SZ * 0.15",
+							
+							//DCA SETTINGS
+							"DcaEBuyValue":"-1.9",
+							"DcaASellValue":"0.6",
+		
+							"DcaTrailingBuy":"SQ * 0.25",
+							"DcaTrailingProfit":"SZ * 0.15",
+		
+							"Weight":"1300"
+						}
+						}
+					]
+				},
+	
+		"SuperBearStrategyGrouping":{
+			"Condition":"[pair.LastPrice] < [pair.LongerSma] && [pair.ShorterSma] < [pair.LongerSma] && [pair.ShorterEma] < [pair.LongerEma]", 
+			"Configs":[{
+						"Override":{
+							//BUY SETTINGS
+							"ABuyValue":"-2.4",
+		
+							"TrailingBuy":"SQ * 0.4",
+							"TrailingProfit":"SZ * 0.1",
+							
+							//DCA SETTINGS
+							"DcaEBuyValue":"-2.4",
+							"DcaASellValue":"0.5",
+		
+							"DcaTrailingBuy":"SQ * 0.4",
+							"DcaTrailingProfit":"SZ * 0.1",
+		
+							"Weight":"1400"
+						}
+						}
+					]
+				}
+
+/*	"GoSuperBullStrategyGrouping":{//if the short ema is under the long and 24hr % cahnge is x% and topcoins change 4 hr is x% apply downtrend scalping strategies 2.07    (Alternate Buy Strategy)
+		"Condition":"[pair.LastPrice] > [pair.LongerSma] ", //[pair.LastPrice]&& [pair.LastPrice] > [pair.Vwap] && [pair.ShorterEma] > [pair.LongerSma] && [pair.ShorterEma] > [pair.LongerEma]
+		"Configs":[{
+					"Override":{
+					"InsertSnippets": "DefaultBuy",
+					"Weight":"1200"
+					}
+					}
+				]
+			}*/
+	/**************** Volatilty Overides and Offsets ***************************************************************************************************************************************************************************************************************/
+	// Market Conditions //
+	// Pair Conditions //
+	//   "UpsideDownsideVolatilityDifferenceGrouping": {//11.07
+	// 	  "Configs": [{
+	// 		  "MaxUpsideDownsideVolatilityDifference": "-0.3"
+	//   },{
+	// 		  "MaxUpsideDownsideVolatilityDifference": "-0.2"
+	//   },{
+	// 		  "MaxUpsideDownsideVolatilityDifference": "-0.1"
+	//   },{
+	// 		  "MaxUpsideDownsideVolatilityDifference": "0.01"
+	//   },{
+	// 		  "MaxUpsideDownsideVolatilityDifference": "0.2"
+	//   },{
+	// 		  "MaxUpsideDownsideVolatilityDifference": "0.3"
+	//   },{
+	// 		  "MaxUpsideDownsideVolatilityDifference": "10"
+	//   }]},
+	//   "AverageCandleSizeGrouping": {//11.07
+	// 	  "Configs": [{
+	// 		  "MaxPercentageSizeOfPrice": "-0.3"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "-0.2"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "-0.1"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "0.01"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "0.2"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "0.3"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "0.4"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "0.5"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "0.6"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "0.7"
+	//   },{
+	// 		  "MaxPercentageSizeOfPrice": "100"
+	//   }]},
+	// Position Management //
+	//"Footer": {
+	//	"Pairs": {
+	//		"DEFAULTpanicsellenabled": "false" //just to have it handy
+	//	},
+	//	"Dca": {
+	//		"DEFAULTDcapanicsellenabled": "false"
+	//	}	
+	//}
+}
